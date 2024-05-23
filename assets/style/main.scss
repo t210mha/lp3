@@ -1,0 +1,139 @@
+@charset "UTF-8";
+
+/* ---------------------------------
+    共通 ここから
+--------------------------------- */
+// 定数 font-weight
+$regular: 400;
+$medium: 500;
+$semibold: 600;
+$bold: 700;
+
+// フォント設定
+// ベースフォント
+@mixin baseFont($weight: $regular) {
+    font-family: "Noto Sans JP", serif;
+    font-weight: $weight;
+    font-style: normal;
+}
+
+// 金額用フォント
+@mixin monthlyPriceFont($weight: $regular) {
+    font-family: "Outfit", serif;
+    font-weight: $weight;
+    font-style: normal;
+}
+
+// スムーススクロール
+html {
+    scroll-behavior: smooth;
+}
+
+// 自動改行のための設定
+span {
+    display: inline-block;
+}
+
+// リンクのデコレーションを消す
+a {
+    text-decoration: none;
+}
+
+a:hover {
+    cursor: pointer;
+}
+
+// リストのスタイルをリセット
+ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+/* ---------------------------------
+    共通 ここまで
+--------------------------------- */
+
+/* ---------------------------------
+    scss関数群 ここから
+--------------------------------- */
+// コンテンツ幅の指定
+$sp_content_width: 375;
+$pc_full_width: 1366;
+$pc_content_width: 1120;
+
+// 本番用か否か？本番用の場合は1にする。0の場合はpxで出力される。(パーフェクトピクセル用)
+$production: 1;
+
+// SP用: vwへの変換
+@function vw($px) {
+    @if $production !=1 {
+        @return $px * 1px;
+    }
+
+    @return calc($px * 100vw / $sp_content_width);
+}
+
+// PC用: vwへの変換
+@function vwp($px) {
+    @if $production !=1 {
+        @return $px * 1px;
+    }
+
+    @return calc($px * 100vw / $pc_full_width);
+}
+
+// pxをremに変換
+@function px2Rem($px) {
+    @if $production !=1 {
+        @return $px * 1px;
+    }
+
+    @return calc($px / 16) * 1rem;
+}
+
+// 下記でmin/max関数をScssの関数ではなくcssの関数として出力するためのラッパー
+@function min($values...) {
+    @return unquote('min(#{$values})');
+}
+
+@function max($values...) {
+    @return unquote('max(#{$values})');
+}
+
+// vwで動作し、pxで頭打ちにする関数
+@function mvw($px) {
+    @if $production !=1 {
+        @return $px * 1px;
+    }
+
+    $value1: calc($px * 100vw / $pc_content_width);
+    $value2: px2Rem($px);
+
+    @if $px >=0 {
+        @return min($value1, $value2);
+    }
+
+    @else {
+        @return max($value1, $value2);
+    }
+}
+
+// メディアクエリ
+// ブレイクポイントの設定
+$breakpoints: (
+    "md": "screen and (min-width: 768px)",
+    "lg": "screen and (min-width: 1030px)",
+    "xl": "screen and (min-width: 1444px)"
+    ) !default;
+
+// メディアクエリのmixin
+@mixin mq($breakpoint) {
+    @media #{map-get($breakpoints, $breakpoint)} {
+        @content;
+    }
+}
+
+/* ---------------------------------
+    scss関数群 ここまで
+--------------------------------- */
