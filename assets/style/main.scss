@@ -1,7 +1,6 @@
 @charset "UTF-8";
 
-/* ---------------------------------
-    共通 ここから
+/*  共通
 --------------------------------- */
 // 定数 font-weight
 $regular: 400;
@@ -50,20 +49,15 @@ ul {
     margin: 0;
 }
 
-/* ---------------------------------
-    共通 ここまで
---------------------------------- */
-
-/* ---------------------------------
-    scss関数群 ここから
+/*  scss関数群
 --------------------------------- */
 // コンテンツ幅の指定
-$sp_content_width: 375;
-$pc_full_width: 1366;
-$pc_content_width: 1120;
+$sp_content_width: 390;
+$pc_full_width: 1422;
+$pc_content_width: 1030;
 
 // 本番用か否か？本番用の場合は1にする。0の場合はpxで出力される。(パーフェクトピクセル用)
-$production: 1;
+$production: 0;
 
 // SP用: vwへの変換
 @function vw($px) {
@@ -124,7 +118,7 @@ $production: 1;
 $breakpoints: (
     "md": "screen and (min-width: 768px)",
     "lg": "screen and (min-width: 1030px)",
-    "xl": "screen and (min-width: 1444px)"
+    "xl": "screen and (min-width: 1422px)"
     ) !default;
 
 // メディアクエリのmixin
@@ -134,6 +128,403 @@ $breakpoints: (
     }
 }
 
-/* ---------------------------------
-    scss関数群 ここまで
+/*  header
+--------------------------------- */
+
+.header {
+    position: fixed;
+    top: 0;
+    right: 0;
+    left: 0;
+    width: vw(390
+    );
+height: vw(60);
+z-index: 1;
+max-width: vw(390);
+background-color: #fff;
+padding: vw(11) vw(9) vw(10) vw(12);
+}
+
+.header__inner {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    column-gap: vw(6);
+}
+
+.header__logo {
+    width: vw(72);
+    height: vw(40);
+}
+
+.header__logo__img {
+    max-width: 100%;
+}
+
+.header__nav {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    vertical-align: middle;
+    column-gap: vw(10);
+    padding-bottom: vw(3);
+}
+
+.header__btn {
+    display: block;
+    color: #FFF;
+    border-radius: vw(15.5); // ボタンの高さの半分
+    text-align: center;
+    padding-top: vw(6);
+
+    &::after {
+        content: '';
+        display: inline-block;
+        margin-left: vw(5);
+        vertical-align: vw(1);
+        width: vw(6);
+        height: vw(6);
+        border-top: vw(1) solid #FFF;
+        border-right: vw(1) solid #FFF;
+        transform: rotate(45deg);
+    }
+
+    &--inquiry {
+        @extend .header__btn;
+        width: vw(107);
+        height: vw(31);
+        background-color: #FA7DA2;
+    }
+
+    &--reservation {
+        @extend .header__btn;
+        width: vw(174);
+        height: vw(31);
+        background-color: #49C43D;
+    }
+}
+
+.btn__text {
+    @include baseFont;
+    font-size: vw(12);
+    letter-spacing: 0.04em;
+
+    &--smaller {
+        @extend .btn__text;
+        font-size: vw(10);
+    }
+}
+
+/*  cover
+--------------------------------- */
+
+.cover {
+    margin-top: vw(56);
+    width: 100%;
+    height: vw(318);
+    background-image: url(/assets/image/cover_model_sp_01.png);
+}
+
+.cover__inner {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    height: 100%;
+}
+
+.course {
+    display: flex;
+    width: vw(202);
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding-top: vw(13);
+    column-gap: vw(10);
+}
+
+.course-detail {
+    display: flex;
+    width: vw(188);
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    column-gap: vw(10);
+}
+
+.course__name {
+    @include baseFont;
+    font-size: vw(42);
+    color: #fff;
+}
+
+.course__content {
+    @include baseFont;
+    font-size: vw(18);
+    color: #fff;
+    margin-top: -4px;
+    padding-left: 4px;
+}
+
+.course-detail__campaign {
+    display: flex;
+    width: vw(188);
+    height: vw(112);
+    padding: vw(24) vw(6) vw(24) vw(27);
+    background-color: #fca4bf;
+    box-shadow: vw(4) vw(4) 0 rgba(24, 23, 24, 0.25);
+}
+
+.campaign__first-row {
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+    align-items: center;
+    padding-top: vw(6);
+    column-gap: vw(10);
+}
+
+.campaign__now {
+    width: vw(47);
+    height: vw(23);
+    @include baseFont($bold);
+    font-size: vw(13);
+    color: #fa7da3;
+    background-color: #fff;
+    text-align: center;
+}
+
+.campaign__first-month {
+    @include baseFont($bold);
+    font-size: vw(24);
+    color: #fff;
+    text-align: center;
+}
+
+.campaign__second-row {
+    margin-top: vw(-27);
+    padding-left: vw(11);
+}
+
+.campaign__price {
+    @include baseFont($bold);
+    font-size: vw(76);
+    color: #fffd7a;
+
+    &--unit {
+        @extend .campaign__price;
+        font-size: vw(36);
+    }
+}
+
+.course-detail__price {
+    width: vw(134);
+    padding-top: vw(7);
+    padding-bottom: vw(24);
+}
+
+.price__amount {
+    @include monthlyPriceFont;
+    font-size: vw(13);
+    color: #fff;
+    text-align: right;
+
+    &--unit {
+        @extend .price__amount;
+        @include baseFont;
+        font-size: vw(9);
+    }
+}
+
+.course-detail__point {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding-left: vw(3);
+    row-gap: vw(12);
+}
+
+.point__item {
+    border: #fff solid vw(1);
+    width: vw(133);
+    height: vw(35);
+    padding-top: vw(2);
+    @include baseFont;
+    font-size: vw(18);
+    color: #fff;
+    text-align: center;
+}
+
+/*  present
+--------------------------------- */
+.present {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    flex-direction: column;
+    height: vw(191);
+    padding: vw(16) vw(19) vw(10) vw(21);
+    background-color: #fffedd;
+}
+
+.present__head {
+    position: relative;
+    margin-bottom: vw(6);
+    @include baseFont;
+    font-size: vw(21);
+    color: #fa7da3;
+}
+
+.present__head::before,
+.present__head::after {
+    overflow: initial;
+    position: absolute;
+    top: 0.125rem;
+    height: 1.7rem;
+    content: '';
+}
+
+.present__head::before {
+    border-left: #fa7da3 solid 0.15rem;
+    left: -1rem;
+    transform: rotate(-30deg);
+}
+
+.present__head::after {
+    border-right: #fa7da3 solid 0.15rem;
+    right: -1rem;
+    transform: rotate(30deg);
+}
+
+.present__content {
+    width: vw(350);
+    height: vw(93);
+    border: #fa7da3 solid vw(1);
+    background-color: #fa7da3;
+    border-radius: vw(10);
+    border-collapse: collapse;
+    text-align: center;
+}
+
+.present__course {
+    height: vw(33);
+    margin-top: vw(-2);
+    padding-right: vw(3);
+    @include baseFont;
+    font-size: vw(21);
+    color: #fff;
+}
+
+.present__desc {
+    height: vw(60);
+    padding-left: vw(5);
+    @include baseFont;
+    font-size: vw(27);
+    background-color: #fff;
+    border-radius: 0  0 vw(10) vw(10);
+    color: #fa7da3;
+
+    &--large {
+        @extend .present__desc;
+        @include baseFont($semibold);
+        font-size: vw(42);
+    }
+}
+
+.present__detail {
+    padding-top: vw(1);
+    padding-right: vw(5);
+    @include baseFont;
+    font-size: vw(10);
+    color: #333333;
+    text-align: center;
+}
+
+/*  cv
+--------------------------------- */
+.cv {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    flex-direction: column;
+    background-color: #fff;
+
+    &--first {
+        @extend .cv;
+        height: vw(297);
+        padding: vw(14) vw(21) vw(41) vw(21);
+    }
+}
+
+.cv__free-trial {
+    @include baseFont($semibold);
+    font-size: vw(21);
+    letter-spacing: 0.1em;
+    color: #fa7da3;
+    padding: 0 0 vw(9) vw(11);
+}
+
+.cv__btn-reserve {
+    position: relative;
+    display: inline-block;
+    padding-top: vw(12);
+    padding-bottom: vw(12);
+    width: vw(350);
+    height: vw(80);
+    border-radius: vw(40);
+    background-color: #49c43d;
+    color: #fff;
+
+    &::after {
+        content: '';
+        position:absolute;
+        right: vw(35);
+        top: 41%;
+        width: vw(13);
+        height: vw(13);
+        border-top: vw(2) solid #FFF;
+        border-right: vw(2) solid #FFF;
+        transform: rotate(45deg);
+    }
+}
+
+.cv__btn-text {
+    @include baseFont($bold);
+    font-size: vw(21);
+    line-height: 1.33;
+    letter-spacing: 0.1em;
+    text-align: center;
+}
+
+.cv__header {
+    width: vw(350);
+    height: vw(42);
+    @include baseFont($semibold);
+    font-size: vw(17);
+    letter-spacing: 0.1em;
+    color: #50bfff;
+    border-top: #50bfff solid vw(1);
+    border-bottom: #50bfff solid vw(1);
+    margin-top: vw(30);
+    padding: vw(7) 0 vw(7) vw(2);
+    text-align: center;
+}
+
+.cv__detail {
+    @include baseFont;
+    font-size: vw(14);
+    line-height: 1.71;
+    color: #333;
+    padding-top: vw(10);
+
+    &--small {
+        @include baseFont;
+        font-size: vw(11);
+        color: #333;
+    }
+}
+
+
+
+/*  present
 --------------------------------- */
