@@ -344,7 +344,7 @@ padding: vw(11) vw(9) vw(10) vw(12);
     row-gap: vw(12);
 }
 
-.point__item {
+.course-detail__point__item {
     border: #fff solid vw(1);
     width: vw(133);
     height: vw(35);
@@ -524,6 +524,231 @@ padding: vw(11) vw(9) vw(10) vw(12);
     }
 }
 
+/*  point
+--------------------------------- */
+.point {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    flex-direction: column;
+    background-color: #fdf0f5;
+    height: vw(1509);
+    padding: vw(33) vw(19) vw(30) vw(21);
+    row-gap: vw(23);
+}
+
+.point__title {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    row-gap: vw(8);
+}
+
+.point__title__first-line {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    column-gap: vw(3);
+}
+
+.point__title__logo {
+    color: #4d2b1b;
+    margin-bottom: vw(-4);
+}
+
+.point__text__first {
+    @include baseFont($medium);
+    font-size: vw(18);
+    letter-spacing: 0.04em;
+    color: #4d2b1b;
+}
+
+.point__title__second-line {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.point__sparkle {
+    width: vw(37);
+    height: vw(46);
+
+    &--right {
+        @extend .point__sparkle;
+        margin-left: vw(-0);
+    }
+}
+
+.point__text__second {
+    @include baseFont($bold);
+    font-size: vw(32);
+    letter-spacing: 0.04em;
+    color: #fa7da3;
+}
+
+.point__item {
+    width: vw(350);
+    border: #fa7da3 solid vw(1);
+    background-color: #fa7da3;
+    border-radius: vw(10);
+    border-collapse: collapse;
+    text-align: center;
+
+    &--first {
+        @extend .point__item;
+        height: vw(242);
+        margin-bottom: vw(9);
+    }
+
+    &--third {
+        @extend .point__item;
+        margin-top: vw(8);
+    }
+}
+
+.point__heading {
+    @include baseFont;
+    font-size: vw(18);
+    color: #fff;
+    text-align: center;
+    padding-top: vw(8);
+    padding-bottom: vw(11);
+}
+
+.point__body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    background-color: #fff;
+    border-radius: 0  0 vw(10) vw(10);
+    padding: vw(14) 0 vw(17);
+    row-gap: vw(12);
+
+    &--second {
+        @extend .point__body;
+        padding-bottom: vw(17);
+    }
+}
+
+.point__detail {
+    @include baseFont;
+    font-size: vw(14);
+    line-height: 1.5;
+    letter-spacing: -0.04em;;
+    color: #333;
+    text-align: left;
+    padding-right: vw(18);
+    padding-left: vw(20);
+
+    &--second,
+    &--third {
+        @include baseFont;
+        letter-spacing: 0;
+    }
+}
+
+.point__comparison {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    column-gap: vw(22);
+}
+
+.point__comparison__item {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    row-gap: vw(6);
+}
+
+.point__comparison__shop {
+    width: vw(143);
+    height: vw(84);
+    padding: vw(23) vw(34) vw(16) vw(38);
+    border:#fa7da3 solid vw(1);
+
+    &--other {
+        @extend .point__comparison__shop;
+        border-color: #666;
+        background-color: #fdf0f5;
+        color: #666;
+        @include baseFont;
+        font-size: vw(18);
+        letter-spacing: 0.12em;
+        padding: vw(28) vw(31) vw(35) vw(34);
+    }
+}
+
+.point__logo {
+    width: vw(71);
+    height: vw(39);
+}
+
+.point__comparison__plan {
+    @include baseFont;
+    font-size: vw(14);
+    color: #333;
+}
+
+.point__plan {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    row-gap: vw(24);
+    margin-top: vw(8);
+
+    &--second {
+        @extend .point__plan;
+        margin-top: vw(30);
+    }
+}
+
+.point__plan__name {
+    @include baseFont($semibold);
+    font-size: vw(23);
+    color: #4d2c1c;
+}
+
+.point__plan__img {
+    width: vw(312);
+    height: vw(351);
+}
+
+.point__plan__part {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    row-gap: vw(18);
+    column-gap: vw(12);
+    flex-direction: row;
+    flex-wrap: wrap;
+    padding: vw(3) vw(12) 0;
+}
+
+.part {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    row-gap: vw(3);
+}
+
+.part__img {
+    width: vw(100);
+    height: vw(100);
+}
+
+.part__name {
+    @include baseFont($semibold);
+    font-size: vw(14);
+    color: #fa7da3;
+    padding-top: vw(1);
+}
 
 
 /*  present
