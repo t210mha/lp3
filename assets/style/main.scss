@@ -53,8 +53,8 @@ ul {
 --------------------------------- */
 // コンテンツ幅の指定
 $sp_content_width: 390;
-$pc_full_width: 1422;
-$pc_content_width: 1030;
+$pc_full_width: 1440;
+$pc_content_width: 1028;
 
 // 本番用か否か？本番用の場合は1にする。0の場合はpxで出力される。(パーフェクトピクセル用)
 $production: 0;
@@ -117,8 +117,8 @@ $production: 0;
 // ブレイクポイントの設定
 $breakpoints: (
     "md": "screen and (min-width: 768px)",
-    "lg": "screen and (min-width: 1030px)",
-    "xl": "screen and (min-width: 1422px)"
+    "lg": "screen and (min-width: 1028px)",
+    "xl": "screen and (min-width: 1440px)"
     ) !default;
 
 // メディアクエリのmixin
@@ -136,13 +136,19 @@ $breakpoints: (
     top: 0;
     right: 0;
     left: 0;
-    width: vw(390
-    );
-height: vw(60);
-z-index: 1;
-max-width: vw(390);
-background-color: #fff;
-padding: vw(11) vw(9) vw(10) vw(12);
+    width: vw(390);
+    height: vw(60);
+    z-index: 1;
+    max-width: vw(390);
+    background-color: #fff;
+    padding: vw(11) vw(9) vw(10) vw(12);
+
+    @include mq(md) {
+        width: vwp(1440);
+        max-width: vwp(1440);
+        height: vwp(92);
+        padding: vwp(18) vwp(208) vwp(21);
+    }
 }
 
 .header__inner {
@@ -150,11 +156,21 @@ padding: vw(11) vw(9) vw(10) vw(12);
     justify-content: flex-start;
     align-items: center;
     column-gap: vw(6);
+
+    @include mq(md) {
+        justify-content: space-between;
+        column-gap: vwp(10);
+    }
 }
 
 .header__logo {
     width: vw(72);
     height: vw(40);
+
+    @include mq(md) {
+        width: vwp(97);
+        height: vwp(54);
+    }
 }
 
 .header__logo__img {
@@ -168,6 +184,12 @@ padding: vw(11) vw(9) vw(10) vw(12);
     vertical-align: middle;
     column-gap: vw(10);
     padding-bottom: vw(3);
+
+    @include mq(md) {
+        column-gap: vwp(21);
+        padding-top: vwp(3);
+        padding-bottom: vwp(3);
+    }
 }
 
 .header__btn {
@@ -176,6 +198,10 @@ padding: vw(11) vw(9) vw(10) vw(12);
     border-radius: vw(15.5); // ボタンの高さの半分
     text-align: center;
     padding-top: vw(6);
+
+    @include mq(md) {
+        border-radius: vwp(25);
+    }
 
     &::after {
         content: '';
@@ -187,6 +213,15 @@ padding: vw(11) vw(9) vw(10) vw(12);
         border-top: vw(1) solid #FFF;
         border-right: vw(1) solid #FFF;
         transform: rotate(45deg);
+
+        @include mq(md) {
+            margin-left: vwp(8);
+            vertical-align: vwp(2);
+            width: vwp(11);
+            height: vwp(11);
+            border-top: vwp(2) solid #FFF;
+            border-right: vwp(2) solid #FFF;
+        }
     }
 
     &--inquiry {
@@ -194,6 +229,13 @@ padding: vw(11) vw(9) vw(10) vw(12);
         width: vw(107);
         height: vw(31);
         background-color: #FA7DA2;
+
+        @include mq(md) {
+            width: vwp(189);
+            height: vwp(51);
+            padding-top: vwp(9);
+            padding-left: vwp(9);
+        }
     }
 
     &--reservation {
@@ -201,6 +243,13 @@ padding: vw(11) vw(9) vw(10) vw(12);
         width: vw(174);
         height: vw(31);
         background-color: #49C43D;
+
+        @include mq(md) {
+            width: vwp(296);
+            height: vwp(51);
+            padding-top: vwp(7);
+            padding-left: vwp(4);
+        }
     }
 }
 
@@ -209,9 +258,19 @@ padding: vw(11) vw(9) vw(10) vw(12);
     font-size: vw(12);
     letter-spacing: 0.04em;
 
+    @include mq(md) {
+        font-size: vwp(21.12);
+        letter-spacing: 0;
+    }
+
     &--smaller {
         @extend .btn__text;
         font-size: vw(10);
+
+        @include mq(md) {
+            font-size: vwp(17.87);
+            letter-spacing: 0;
+        }
     }
 }
 
@@ -223,6 +282,11 @@ padding: vw(11) vw(9) vw(10) vw(12);
     width: 100%;
     height: vw(318);
     background-image: url(/assets/image/cover_model_sp_01.png);
+
+    @include mq(md) {
+        height: vw(318);
+        background-image: url(/assets/image/cover_model_pc_01.png);
+    }
 }
 
 .cover__inner {
@@ -407,9 +471,9 @@ padding: vw(11) vw(9) vw(10) vw(12);
 }
 
 .present__course {
-    height: vw(33);
-    margin-top: vw(-2);
+    height: vw(31);
     padding-right: vw(3);
+    padding-bottom: vw(3);
     @include baseFont;
     font-size: vw(21);
     color: #fff;
@@ -418,6 +482,7 @@ padding: vw(11) vw(9) vw(10) vw(12);
 .present__desc {
     height: vw(60);
     padding-left: vw(5);
+    padding-bottom: vw(2);
     @include baseFont;
     font-size: vw(27);
     background-color: #fff;
@@ -506,6 +571,10 @@ padding: vw(11) vw(9) vw(10) vw(12);
     line-height: 1.33;
     letter-spacing: 0.1em;
     text-align: center;
+}
+
+.cv__btn-color {
+    color: #fff;
 }
 
 .cv__header {
