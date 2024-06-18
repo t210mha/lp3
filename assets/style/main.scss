@@ -423,17 +423,18 @@ $breakpoints: (
 --------------------------------- */
 .present {
     display: flex;
-    justify-content: space-evenly;
+    justify-content: flex-start;
     align-items: center;
     flex-direction: column;
     height: vw(191);
-    padding: vw(16) vw(19) vw(10) vw(21);
+    padding: vw(19) vw(19) vw(10) vw(21);
     background-color: #fffedd;
+    row-gap: vw(8);
 }
 
 .present__head {
     position: relative;
-    margin-bottom: vw(6);
+    margin-bottom: vw(3);
     @include baseFont;
     font-size: vw(21);
     color: #fa7da3;
@@ -462,7 +463,6 @@ $breakpoints: (
 
 .present__content {
     width: vw(350);
-    height: vw(93);
     border: #fa7da3 solid vw(1);
     background-color: #fa7da3;
     border-radius: vw(10);
@@ -471,18 +471,16 @@ $breakpoints: (
 }
 
 .present__course {
-    height: vw(31);
-    padding-right: vw(3);
-    padding-bottom: vw(3);
+    padding: vw(3) vw(3) vw(8) 0;
+    line-height: 1;
     @include baseFont;
     font-size: vw(21);
     color: #fff;
 }
 
 .present__desc {
-    height: vw(60);
-    padding-left: vw(5);
-    padding-bottom: vw(2);
+    padding: vw(3) 0 vw(6) vw(5);
+    line-height: 1;
     @include baseFont;
     font-size: vw(27);
     background-color: #fff;
@@ -497,8 +495,8 @@ $breakpoints: (
 }
 
 .present__detail {
-    padding-top: vw(1);
-    padding-right: vw(5);
+    padding-right: vw(4);
+    letter-spacing: 0.01em;
     @include baseFont;
     font-size: vw(10);
     color: #333333;
@@ -523,12 +521,12 @@ $breakpoints: (
     &--second {
         @extend .cv;
         height: vw(170);
-        padding: vw(25) vw(19) 0 vw(21);
+        padding: vw(25) vw(19) 0 vw(19);
     }
 
     &--third {
         @extend .cv;
-        padding-top: vw(26);
+        padding-top: vw(27);
         padding-bottom: vw(42);
     }
 }
@@ -538,7 +536,7 @@ $breakpoints: (
     font-size: vw(21);
     letter-spacing: 0.1em;
     color: #fa7da3;
-    padding: 0 0 vw(9) vw(11);
+    padding: 0 0 vw(8) vw(11);
 }
 
 .cv__btn-reserve {
@@ -555,8 +553,8 @@ $breakpoints: (
     &::after {
         content: '';
         position: absolute;
-        right: vw(35);
-        top: 41%;
+        right: vw(36);
+        top: 42%;
         width: vw(13);
         height: vw(13);
         border-top: vw(2) solid #FFF;
@@ -600,6 +598,7 @@ $breakpoints: (
 
     &--small {
         @include baseFont;
+        letter-spacing: -0.01em;
         font-size: vw(11);
         color: #333;
     }
@@ -631,6 +630,7 @@ $breakpoints: (
     justify-content: center;
     align-items: center;
     column-gap: vw(3);
+    padding-left: vw(2);
 }
 
 .point__title__logo {
@@ -652,7 +652,7 @@ $breakpoints: (
 }
 
 .point__sparkle {
-    width: vw(37);
+    width: vw(37.31);
     height: vw(46);
 
     &--right {
@@ -664,6 +664,7 @@ $breakpoints: (
 .point__text__second {
     @include baseFont($bold);
     font-size: vw(32);
+    line-height: 0.875;
     letter-spacing: 0.04em;
     color: #fa7da3;
 }
@@ -684,7 +685,8 @@ $breakpoints: (
 
     &--third {
         @extend .point__item;
-        margin-top: vw(8);
+        margin-top: vw(7);
+        margin-bottom: vw(9);
     }
 }
 
@@ -705,11 +707,16 @@ $breakpoints: (
     background-color: #fff;
     border-radius: 0 0 vw(10) vw(10);
     padding: vw(14) 0 vw(17);
-    row-gap: vw(12);
+    row-gap: vw(13);
 
     &--second {
         @extend .point__body;
         padding-bottom: vw(17);
+    }
+
+    &--third {
+        @extend .point__body;
+        padding: vw(15) 0 vw(17);
     }
 }
 
@@ -717,12 +724,16 @@ $breakpoints: (
     @include baseFont;
     font-size: vw(14);
     line-height: 1.5;
-    letter-spacing: -0.04em;
-    ;
     color: #333;
     text-align: left;
     padding-right: vw(18);
     padding-left: vw(20);
+
+    &--first {
+        @extend .point__detail;
+        letter-spacing: 0.04em;
+        font-feature-settings: "palt" 1;
+    }
 
     &--second,
     &--third {
@@ -749,7 +760,7 @@ $breakpoints: (
 .point__comparison__shop {
     width: vw(143);
     height: vw(84);
-    padding: vw(23) vw(34) vw(16) vw(38);
+    padding: vw(22) vw(34) vw(16) vw(36);
     border: #fa7da3 solid vw(1);
 
     &--other {
@@ -796,8 +807,9 @@ $breakpoints: (
 }
 
 .point__plan__img {
-    width: vw(312);
+    width: vw(313);
     height: vw(351);
+    padding-left: vw(1);
 }
 
 .point__plan__part {
@@ -809,7 +821,7 @@ $breakpoints: (
     column-gap: vw(12);
     flex-direction: row;
     flex-wrap: wrap;
-    padding: vw(3) vw(12) 0;
+    padding: vw(3) vw(12) 0 vw(10);
 }
 
 .part {
@@ -841,7 +853,7 @@ $breakpoints: (
     flex-direction: column;
     background-color: #fff;
     padding: vw(18) vw(19) vw(20) vw(21);
-    row-gap: vw(23);
+    row-gap: vw(24);
 }
 
 .other__title {
@@ -902,7 +914,7 @@ $breakpoints: (
 
     &--second {
         @extend .other__item;
-        margin-top: vw(8);
+        margin-top: vw(7);
     }
 }
 
@@ -912,12 +924,11 @@ $breakpoints: (
     color: #fa7da3;
     text-align: center;
     padding-top: vw(10);
-    padding-bottom: vw(10);
-    padding-right: vw(2);
+    padding-bottom: vw(8);
 
     &--second {
         @extend .other__heading;
-        padding-top: vw(9);
+        padding: vw(9) vw(3) vw(8) 0;
     }
 }
 
@@ -938,8 +949,8 @@ $breakpoints: (
     line-height: 1.5;
     color: #333;
     text-align: left;
-    padding-right: vw(18);
-    padding-left: vw(20);
+    padding: vw(1) vw(18) 0 vw(19);
+    letter-spacing: 0.01em;
 }
 
 .other__img {
@@ -956,7 +967,7 @@ $breakpoints: (
     flex-direction: column;
     background-color: #fdf0f5;
     height: vw(335);
-    padding-top: vw(27);
+    padding-top: vw(28);
     padding-bottom: vw(19);
     row-gap: vw(20);
 }
@@ -986,10 +997,6 @@ $breakpoints: (
     font-size: vw(32);
     color: #fa7da3;
 }
-
-// * {
-//     border: 1px solid red;
-// }
 
 .swiper-container {
     position: relative;
@@ -1028,13 +1035,13 @@ $breakpoints: (
 
 .voice__heading {
     width: vw(308);
-    height: vw(37);
     @include baseFont;
     font-size: vw(18);
     background-color: #fa7da3;
     border-radius: vw(10) vw(10) 0 0;
     color: #fff;
     padding-top: vw(8);
+    padding-bottom: vw(11);
     text-align: center;
 }
 
