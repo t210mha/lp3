@@ -36,7 +36,7 @@
                     <a href="#">
                         <picture>
                             <source media="(min-width: 768px)" srcset="/assets/image/logo_pink_pc_01.svg">
-                            <img src="/assets/image/logo_pink_sp_01.svg" alt="KIRAMEKI BEAUTY LABO">
+                            <img class="header__logo" src="/assets/image/logo_pink_sp_01.svg" alt="KIRAMEKI BEAUTY LABO">
                         </picture>
                     </a>
                 </h1>
@@ -100,11 +100,14 @@
             <!-- CV ここから-->
             <section class="cv cv--first">
                 <div class="cv__free-trial">無料体験実施中！</div>
-                <div class="cv__btn-reserve">
-                    <div class="cv__btn-text"><a class="cv__btn-color" href="/reservation/"><span>カウンセリング予約</span><span>はこちら（無料）</span></a></div>
-                </div>
+                <a class="cv__btn-reserve" href="/reservation/">
+                    <div class="cv__btn-text"><span>カウンセリング予約</span><span>はこちら（無料）</span></div>
+                </a>
                 <div class="cv__header"><span class="cv__title">無料体験内容</span></div>
-                <div class="cv__detail">〈脱毛体験〉V<span class="cv__detail--small">(10分)or</span>両脇<span class="cv__detail--small">(10分)</span><span>〈美顔体験〉フェイシャルトリートメント<span class="cv__detail--small">(40分コース1回)</span></span></div>
+                <div class="cv__detail">
+                    <div class="cv__detail__line">〈脱毛体験〉V<span class="cv__detail__line--small">(10分)or</span>両脇<span class="cv__detail__line--small">(10分)</span></div>
+                    <div class="cv__detail__line"><span>〈美顔体験〉フェイシャルトリートメント<span class="cv__detail__line--small">(40分コース1回)</span></span></div>
+                </div>
             </section>
             <!-- CV ここまで-->
 
@@ -141,13 +144,16 @@
                         </div>
                     </div>
                 </div>
-                <div class="point__item">
-                    <div class="point__heading">POINT2 ｜ プランが選べる</div>
+                <div class="point__item point__item--second">
+                    <div class="point__heading point__heading--second">POINT2 ｜ プランが選べる</div>
                     <div class="point__body point__body--second">
                         <p class="point__detail point__detail--second">「全身プラン」と、施術部位を選べる「部分脱毛プラン」から自由にお選びいただけます。</p>
-                        <div class="point__plan">
+                        <div class="point__plan point__plan--first">
                             <div class="point__plan__name">全身プラン</div>
-                            <img class="point__plan__img" src="/assets/image/whole_body_sp_01.png" alt="">
+                            <picture>
+                                <source media="(min-width: 768px)" srcset="/assets/image/whole_body_pc_01.png" width="583" height="601">
+                                <img class="point__plan__img" src="/assets/image/whole_body_sp_01.png" alt="">
+                            </picture>
                         </div>
                         <div class="point__plan point__plan--second">
                             <div class="point__plan__name">部分脱毛プラン</div>
@@ -181,7 +187,7 @@
                     </div>
                 </div>
                 <div class="point__item point__item--third">
-                    <div class="point__heading">POINT3 ｜ 安心のサポート</div>
+                    <div class="point__heading point__heading--third">POINT3 ｜ 安心のサポート</div>
                     <div class="point__body point__body--third">
                         <p class="point__detail point__detail--third">提携医療機関のサポートがありますので、ご安心ください。</p>
                     </div>
@@ -192,9 +198,9 @@
             <!-- CV ここから-->
             <section class="cv cv--second">
                 <div class="cv__free-trial">無料体験実施中！</div>
-                <div class="cv__btn-reserve">
-                    <div class="cv__btn-text"><a class="cv__btn-color" href="/reservation/"><span>カウンセリング予約</span><span>はこちら（無料）</span></a></div>
-                </div>
+                <a class="cv__btn-reserve" href="/reservation/">
+                    <div class="cv__btn-text"><span>カウンセリング予約</span><span>はこちら（無料）</span></div>
+                </a>
             </section>
             <!-- CV ここまで-->
 
@@ -209,18 +215,20 @@
                         <div class="other__text__second">2つのコース</div><img class="other__sparkle--right" src="/assets/image/sparkle_right_01.png" alt="">
                     </div>
                 </div>
-                <div class="other__item">
-                    <div class="other__heading">ボディコース</div>
-                    <div class="other__body">
-                        <p class="other__detail">ボディケアのスペシャリストが、お客様のお肌を優しく施術いたします。</p>
-                        <img class="other__img" src="/assets/image/body_course_01.jpg" alt="">
+                <div class="other__list">
+                    <div class="other__item">
+                        <div class="other__heading">ボディコース</div>
+                        <div class="other__body">
+                            <p class="other__detail"><span>ボディケアのスペシャリストが、お客</span><span>様の</span>お肌を優しく施術いたします。</p>
+                            <img class="other__img" src="/assets/image/body_course_01.jpg" alt="">
+                        </div>
                     </div>
-                </div>
-                <div class="other__item other__item--second">
-                    <div class="other__heading other__heading--second">フェイシャルコース</div>
-                    <div class="other__body">
-                        <p class="other__detail">確かな技術を持つエステティシャンが、お客様の理想のお肌に近づけます。</p>
-                        <img class="other__img" src="/assets/image/facial_course_01.jpg" alt="">
+                    <div class="other__item other__item--second">
+                        <div class="other__heading other__heading--second">フェイシャルコース</div>
+                        <div class="other__body">
+                            <p class="other__detail"><span>確かな技術を持つエステティシャンが</span><span>、お客様の</span>理想のお肌に近づけます。</p>
+                            <img class="other__img" src="/assets/image/facial_course_01.jpg" alt="">
+                        </div>
                     </div>
                 </div>
             </section>
@@ -275,7 +283,6 @@
                             </div>
                         </div>
                     </div>
-                    <!-- ページネーションをswiperの外に出す -->
                     <div class="swiper-pagination"></div>
                 </div>
             </section>
@@ -284,9 +291,9 @@
             <!-- CV ここから-->
             <section class="cv cv--third">
                 <div class="cv__free-trial">無料体験実施中！</div>
-                <div class="cv__btn-reserve">
-                    <div class="cv__btn-text"><a class="cv__btn-color" href="/reservation/"><span>カウンセリング予約</span><span>はこちら（無料）</span></a></div>
-                </div>
+                <a class="cv__btn-reserve" href="/reservation/">
+                    <div class="cv__btn-text"><span>カウンセリング予約</span><span>はこちら（無料）</span></div>
+                </a>
             </section>
             <!-- CV ここまで-->
         </main>

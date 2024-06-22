@@ -13,6 +13,7 @@ const swiper = new Swiper('.swiper', {
         el: '.swiper-scrollbar',
         hide: true, // スクロールバーを非表示にする
     },
+    speed: 600, // スライド切り替えスピードを0.6秒に設定
     breakpoints: {
         768: {
             slidesPerView: 3,
