@@ -144,10 +144,17 @@ $breakpoints: (
     padding: vw(11) vw(9) vw(10) vw(12);
 
     @include mq(md) {
-        width: vwp(1440);
-        max-width: vwp(1440);
+        max-width: 100%;
+        height: mvw(92);
+        padding: vwp(18) 0 vwp(21);
+        margin: auto;
+    }
+
+    @include mq(lg) {
+        width: vwp(1028);
+        max-width: 100%;
         height: vwp(92);
-        padding: vwp(18) vwp(208) vwp(21);
+        padding: vwp(16) 0 vwp(21);
     }
 }
 
@@ -173,10 +180,6 @@ $breakpoints: (
     }
 }
 
-.header__logo__img {
-    max-width: 100%;
-}
-
 .header__nav {
     display: flex;
     justify-content: flex-end;
@@ -186,9 +189,9 @@ $breakpoints: (
     padding-bottom: vw(3);
 
     @include mq(md) {
-        column-gap: vwp(21);
-        padding-top: vwp(3);
-        padding-bottom: vwp(3);
+        column-gap: mvw(21);
+        padding-top: mvw(4);
+        padding-bottom: mvw(3);
     }
 }
 
@@ -284,9 +287,23 @@ $breakpoints: (
     background-image: url(/assets/image/cover_model_sp_01.png);
 
     @include mq(md) {
-        height: vw(318);
+        margin: mvw(92) auto 0;
+        height: mvw(612);
         background-image: url(/assets/image/cover_model_pc_01.png);
+        background-size: cover;
+        background-position: center;
     }
+
+    @include mq(lg) {
+        margin: vwp(92) auto 0;
+        height: vwp(612);
+        background-image: url(/assets/image/cover_model_pc_01.png);
+        background-size: 100% auto;
+        background-position: center top;
+        padding-right: calc((100% - mvw(1028))/2);
+        padding-left: calc((100% - mvw(1028))/2);
+    }
+
 }
 
 .cover__inner {
@@ -294,6 +311,12 @@ $breakpoints: (
     justify-content: center;
     align-items: flex-start;
     height: 100%;
+
+    @include mq(md) {
+        width: mvw(1028);
+        max-width: mvw(1028);
+        justify-content: flex-start;
+    }
 }
 
 .course {
@@ -302,8 +325,18 @@ $breakpoints: (
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    padding-top: vw(13);
+    padding-top: vw(26);
     column-gap: vw(10);
+
+    @include mq(md) {
+        width: mvw(350);
+        padding-top: 0;
+        column-gap: mvw(10);
+    }
+
+    @include mq(xl) {
+        width: vwp(576);
+    }
 }
 
 .course-detail {
@@ -313,20 +346,36 @@ $breakpoints: (
     justify-content: center;
     align-items: center;
     column-gap: vw(10);
+
+    @include mq(md) {
+        width: mvw(423.02);
+        column-gap: vwp(10);
+    }
 }
 
 .course__name {
     @include baseFont;
     font-size: vw(42);
     color: #fff;
+
+    @include mq(md) {
+        width: mvw(541);
+        height: mvw(177);
+    }
 }
 
 .course__content {
     @include baseFont;
     font-size: vw(18);
     color: #fff;
-    margin-top: -4px;
-    padding-left: 4px;
+    margin-top: vw(-2);
+    padding-left: vw(4);
+
+    @include mq(md) {
+        font-size: mvw(36);
+        margin-top: mvw(-28);
+        padding-left: mvw(316);
+    }
 }
 
 .course-detail__campaign {
@@ -336,6 +385,13 @@ $breakpoints: (
     padding: vw(24) vw(6) vw(24) vw(27);
     background-color: #fca4bf;
     box-shadow: vw(4) vw(4) 0 rgba(24, 23, 24, 0.25);
+
+    @include mq(md) {
+        width: mvw(423.02);
+        height: mvw(222);
+        justify-content: center;
+        padding: mvw(38) 0 mvw(45);
+    }
 }
 
 .campaign__first-row {
@@ -345,6 +401,11 @@ $breakpoints: (
     align-items: center;
     padding-top: vw(6);
     column-gap: vw(10);
+
+    @include mq(md) {
+        padding-top: mvw(6);
+        column-gap: 0;
+    }
 }
 
 .campaign__now {
@@ -355,6 +416,13 @@ $breakpoints: (
     color: #fa7da3;
     background-color: #fff;
     text-align: center;
+
+    @include mq(md) {
+        width: mvw(105.76);
+        height: mvw(51.65);
+        font-size: mvw(29.25);
+        padding-top: mvw(3);
+    }
 }
 
 .campaign__first-month {
@@ -362,11 +430,23 @@ $breakpoints: (
     font-size: vw(24);
     color: #fff;
     text-align: center;
+
+    @include mq(md) {
+        height: mvw(76);
+        font-size: mvw(54);
+        padding-top: mvw(3);
+        padding-left: mvw(11);
+    }
 }
 
 .campaign__second-row {
     margin-top: vw(-27);
     padding-left: vw(11);
+
+    @include mq(md) {
+        margin-top: mvw(-65);
+        padding-left: mvw(21);
+    }
 }
 
 .campaign__price {
@@ -374,9 +454,17 @@ $breakpoints: (
     font-size: vw(76);
     color: #fffd7a;
 
+    @include mq(md) {
+        font-size: mvw(171);
+    }
+
     &--unit {
         @extend .campaign__price;
         font-size: vw(36);
+
+        @include mq(md) {
+            font-size: mvw(81);
+        }
     }
 }
 
@@ -384,6 +472,11 @@ $breakpoints: (
     width: vw(134);
     padding-top: vw(7);
     padding-bottom: vw(24);
+
+    @include mq(md) {
+        width: mvw(423.02);
+        padding: mvw(6) mvw(63) mvw(49) 0;
+    }
 }
 
 .price__amount {
@@ -392,10 +485,18 @@ $breakpoints: (
     color: #fff;
     text-align: right;
 
+    @include mq(md) {
+        font-size: mvw(26.48);
+    }
+
     &--unit {
         @extend .price__amount;
         @include baseFont;
         font-size: vw(9);
+
+        @include mq(md) {
+            font-size: mvw(17.02);
+        }
     }
 }
 
@@ -406,6 +507,12 @@ $breakpoints: (
     align-items: center;
     padding-left: vw(3);
     row-gap: vw(12);
+
+    @include mq(md) {
+        width: mvw(423.02);
+        padding-left: 0;
+        row-gap: mvw(20);
+    }
 }
 
 .course-detail__point__item {
@@ -417,6 +524,22 @@ $breakpoints: (
     font-size: vw(18);
     color: #fff;
     text-align: center;
+
+    @include mq(md) {
+        width: mvw(420);
+        height: mvw(69);
+        font-size: mvw(28);
+        padding-top: mvw(13);
+        letter-spacing: -0.01em;
+    }
+
+    &--third {
+        @extend .course-detail__point__item;
+
+        @include mq(md) {
+            letter-spacing: -0.07em;
+        }
+    }
 }
 
 /*  present
