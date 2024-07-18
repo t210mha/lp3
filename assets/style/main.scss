@@ -28,9 +28,10 @@ html {
     scroll-behavior: smooth;
 }
 
-// 自動改行のための設定
-span {
-    display: inline-block;
+body {
+    line-height: 1.75;
+    font-family: 'Noto Sans JP', sans-serif; // 一番よく使うフォントを指定
+    color: #000; // base-color
 }
 
 // リンクのデコレーションを消す
@@ -49,6 +50,16 @@ ul {
     margin: 0;
 }
 
+// 自動改行のための設定
+span {
+    display: inline-block;
+}
+
+img {
+    vertical-align: bottom;
+    max-width: 100%;
+}
+
 /*  scss関数群
 --------------------------------- */
 // コンテンツ幅の指定
@@ -57,7 +68,7 @@ $pc_full_width: 1440;
 $pc_content_width: 1028;
 
 // 本番用か否か？本番用の場合は1にする。0の場合はpxで出力される。(パーフェクトピクセル用)
-$production: 0;
+$production: 1;
 
 // SP用: vwへの変換
 @function vw($px) {
@@ -139,49 +150,57 @@ $pcMargin: calc((100% - 1028px) / 2);
     top: 0;
     right: 0;
     left: 0;
-    width: 100%;
-    height: vw(61);
-    z-index: 1;
+    height: vw(63);
+    z-index: 1000;
+    display: flex;
+    justify-content:space-between;
     background-color: #fff;
-    padding: vw(11) vw(9) vw(10) vw(12);
+    align-items: center;
+    margin-top: vw(-3);
+    padding-top: vw(7);
+    padding-left: vw(3);
+    padding-bottom: vw(3);
 
     @include mq(md) {
-        height: mvw(92);
-        padding: mvw(18) mvw(5) mvw(21);
-    }
-
-    @include mq(lg) {
-        height: mvw(92);
-        padding: mvw(16) $pcMargin 0;
+        height: mvw(95);
+        justify-content: space-between;
+        column-gap: mvw(10);
+        margin: mvw(-3) auto 0;
+        padding: 0;
     }
 }
 
 .header__inner {
     display: flex;
-    justify-content:space-between;
     align-items: center;
+    justify-content:space-between;
     column-gap: vw(6);
+    margin: 0 auto;
 
     @include mq(md) {
-        justify-content: space-between;
-        column-gap: mvw(10);
+        column-gap: 0;
+        padding-right: mvw(5);
+        padding-left: mvw(5);
+        width: calc(100% - mvw(10));
     }
 
     @include mq(lg) {
+        column-gap: 0;
+        padding-right: mvw(2);
+        padding-left: 0;
         width: mvw($pc_content_width);
-        max-width: mvw($pc_content_width);
-        justify-content: space-between;
-
     }
 }
 
 .header__logo {
     width: vw(72);
     height: vw(40);
+    vertical-align: top;
 
     @include mq(md) {
         width: mvw(97);
         height: mvw(54);
+        margin-left: mvw(1);
     }
 }
 
@@ -191,12 +210,12 @@ $pcMargin: calc((100% - 1028px) / 2);
     align-items: center;
     vertical-align: middle;
     column-gap: vw(10);
-    padding-bottom: vw(1);
+    margin-top: vw(-2);
 
     @include mq(md) {
+        justify-content: center;
         column-gap: mvw(21);
-        padding-top: mvw(4);
-        padding-bottom: mvw(3);
+        margin-top: mvw(3);
     }
 }
 
@@ -205,10 +224,10 @@ $pcMargin: calc((100% - 1028px) / 2);
     color: #FFF;
     border-radius: vw(15.5); // ボタンの高さの半分
     text-align: center;
-    padding-top: vw(6);
+    padding-top: vw(4);
 
     @include mq(md) {
-        border-radius: mvw(25);
+        border-radius: mvw(25.18);
     }
 
     &::after {
@@ -223,12 +242,12 @@ $pcMargin: calc((100% - 1028px) / 2);
         transform: rotate(45deg);
 
         @include mq(md) {
-            margin-left: mvw(8);
+            margin-left: mvw(7);
             vertical-align: mvw(2);
-            width: mvw(11);
-            height: mvw(11);
-            border-top: px2Rem(2) solid #FFF;
-            border-right: px2Rem(2) solid #FFF;
+            width: mvw(12);
+            height: mvw(12);
+            border-top: mvw(2) solid #FFF;
+            border-right: mvw(2) solid #FFF;
         }
     }
 
@@ -245,9 +264,9 @@ $pcMargin: calc((100% - 1028px) / 2);
         }
 
         @include mq(md) {
-            width: mvw(189);
-            height: mvw(51);
-            padding-top: mvw(10);
+            width: mvw(189.1);
+            height: mvw(50.36);
+            padding-top: mvw(6);
             padding-left: mvw(4);
         }
     }
@@ -263,10 +282,17 @@ $pcMargin: calc((100% - 1028px) / 2);
         }
 
         @include mq(md) {
-            width: mvw(296);
-            height: mvw(51);
-            padding-top: mvw(10);
+            width: mvw(295.49);
+            height: mvw(50.36);
+            padding-top: mvw(4);
             padding-left: mvw(4);
+        }
+
+        &::after {
+            @include mq(md) {
+                vertical-align: 0;
+                margin-left: mvw(4);
+            }
         }
     }
 }
@@ -296,24 +322,22 @@ $pcMargin: calc((100% - 1028px) / 2);
 --------------------------------- */
 
 .cover {
-    margin-top: vw(57);
-    width: 100%;
+    margin-top: vw(56);
+    width: vw(390);
+    max-width: 100%;
     height: vw(318);
     background-image: url(/assets/image/cover_model_sp_01.png);
-    background-size: cover;
-    background-position: center;
+    background-size: contain;
+    background-position: center top;
 
     @include mq(md) {
         margin: mvw(92) auto 0;
-        width: 100%;
+        width: mvw(1440);
         height: mvw(612);
         background-image: url(/assets/image/cover_model_pc_01.png);
         background-size: cover;
         background-position: center top;
-        padding-right: $pcMargin;
-        padding-left: $pcMargin;
     }
-
 }
 
 .cover__inner {
