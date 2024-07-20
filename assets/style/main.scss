@@ -141,7 +141,6 @@ $breakpoints: (
 
 /*  header
 --------------------------------- */
-
 .header {
     position: fixed;
     top: 0;
@@ -308,7 +307,6 @@ $breakpoints: (
 
 /*  cover
 --------------------------------- */
-
 .cover {
     margin-top: vw(56);
     width: 100%;
@@ -1630,6 +1628,11 @@ $breakpoints: (
 
 .swiper-container {
     position: relative;
+
+    @include mq(md) {
+        margin: auto;
+        padding: 0 mvw(20);
+    }
 }
 
 .swiper {
@@ -1638,8 +1641,8 @@ $breakpoints: (
     height: vw(188);
 
     @include mq(md) {
-        width: mvw(961); //(959);
-        max-width: mvw(961); //(959);
+        width: mvw(961);
+        max-width: mvw(961);
         height: mvw(270);
     }
 }
@@ -1721,13 +1724,13 @@ $breakpoints: (
     flex-direction: row;
     background-color: #fff;
     border-radius: 0 0 vw(10) vw(10);
-    padding: vw(15) 0 vw(13);
+    padding: vw(15) 0 vw(12.5);
 
     @include mq(md) {
         width: mvw(308);
         height: mvw(113);
         border-radius: 0 0 mvw(10) mvw(10);
-        padding: mvw(14) 0 mvw(14);
+        padding: mvw(14) 0 mvw(13.5) 0;
     }
 }
 
@@ -1777,7 +1780,7 @@ $breakpoints: (
     @include mq(md) {
         width: mvw(170);
         font-size: mvw(14);
-        padding-top: mvw(1);
+        padding-top: mvw(3);
     }
 }
 

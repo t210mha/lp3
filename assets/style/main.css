@@ -1868,6 +1868,13 @@ img {
     position: relative;
 }
 
+@media screen and (min-width: 768px) {
+    .swiper-container {
+        margin: auto;
+        padding: 0 min(1.8867924528vw, 1.25rem);
+    }
+}
+
 .swiper {
     width: 100vw;
     max-width: 100vw;
@@ -1971,7 +1978,7 @@ img {
     flex-direction: row;
     background-color: #fff;
     border-radius: 0 0 2.5641025641vw 2.5641025641vw;
-    padding: 3.8461538462vw 0 3.3333333333vw;
+    padding: 3.8461538462vw 0 3.2051282051vw;
 }
 
 @media screen and (min-width: 768px) {
@@ -1979,7 +1986,7 @@ img {
         width: min(29.0566037736vw, 19.25rem);
         height: min(10.6603773585vw, 7.0625rem);
         border-radius: 0 0 min(0.9433962264vw, 0.625rem) min(0.9433962264vw, 0.625rem);
-        padding: min(1.320754717vw, 0.875rem) 0 min(1.320754717vw, 0.875rem);
+        padding: min(1.320754717vw, 0.875rem) 0 min(1.2735849057vw, 0.84375rem) 0;
     }
 }
 
@@ -2041,7 +2048,7 @@ img {
     .voice__text {
         width: min(16.0377358491vw, 10.625rem);
         font-size: min(1.320754717vw, 0.875rem);
-        padding-top: min(0.0943396226vw, 0.0625rem);
+        padding-top: min(0.2830188679vw, 0.1875rem);
     }
 }
 
