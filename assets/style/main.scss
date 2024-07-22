@@ -312,16 +312,10 @@ padding-bottom: vw(3);
     margin-top: vw(56);
     width: 100%;
     height: vw(318);
-    background-image: url(/assets/image/cover_model_sp_01.png);
-    background-size: vw(390) vw(318);
-    background-position: center top;
 
     @include mq(md) {
         margin: mvw(92) auto 0;
         height: mvw(612);
-        background-image: url(/assets/image/cover_model_pc_01.png);
-        background-size: cover;
-        background-position: center top;
         background-color: #fa7da3;
     }
 }
@@ -330,11 +324,18 @@ padding-bottom: vw(3);
     display: flex;
     justify-content: center;
     align-items: flex-start;
+    height: 100%;
+    background-image: url(/assets/image/cover_model_sp_01.png);
+    background-size: vw(390) vw(318);
+    background-position: center top;
 
     @include mq(md) {
         width: mvw(1028);
         justify-content: flex-start;
         margin: 0 auto;
+        background-image: url(/assets/image/cover_model_pc_01.png);
+        background-size: cover;
+        background-position: center top;
     }
 }
 
