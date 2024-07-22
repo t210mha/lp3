@@ -146,28 +146,29 @@ $breakpoints: (
     top: 0;
     right: 0;
     left: 0;
-    height: vw(60);
-    z-index: 1000;
-    display: flex;
-    justify-content:space-between;
-    background-color: #fff;
-    align-items: center;
-    padding-top: vw(4);
-    padding-left: vw(3);
-    padding-bottom: vw(3);
+    height: vw(60
+    );
+z-index: 1000;
+display: flex;
+justify-content: space-between;
+background-color: #fff;
+align-items: center;
+padding-top: vw(4);
+padding-left: vw(3);
+padding-bottom: vw(3);
 
-    @include mq(md) {
-        height: mvw(95);
-        column-gap: mvw(10);
-        margin: mvw(-3) auto 0;
-        padding: 0;
-    }
+@include mq(md) {
+    height: mvw(95);
+    column-gap: mvw(10);
+    margin: mvw(-3) auto 0;
+    padding: 0;
+}
 }
 
 .header__inner {
     display: flex;
     align-items: center;
-    justify-content:space-between;
+    justify-content: space-between;
     column-gap: vw(6);
     margin: auto;
 
@@ -1659,10 +1660,10 @@ $breakpoints: (
 
 .swiper-pagination {
     position: absolute;
-    bottom: vw(-50) !important;
+    --swiper-pagination-bottom: #{vw(-44)};
 
     @include mq(md) {
-        bottom: mvw(30) !important;
+        --swiper-pagination-bottom: #{mvw(40)};
     }
 }
 
@@ -1670,12 +1671,12 @@ $breakpoints: (
     background-color: #fa7da3;
     height: vw(15);
     width: vw(15);
-    margin: 0 vw(8) vw(9) !important;
+    --swiper-pagination-bullet-horizontal-gap: #{vw(8)};
 
     @include mq(md) {
         height: mvw(15);
         width: mvw(15);
-        margin: 0 mvw(8) mvw(9) !important;
+        --swiper-pagination-bullet-horizontal-gap: #{mvw(8)};
     }
 }
 
