@@ -514,7 +514,7 @@ img {
     }
 }
 
-.course-detail__point {
+.course-detail__points {
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -524,16 +524,16 @@ img {
 }
 
 @media screen and (min-width: 768px) {
-    .course-detail__point {
+    .course-detail__points {
         width: min(39.9075471698vw, 26.43875rem);
         padding-left: 0;
         row-gap: min(1.8867924528vw, 1.25rem);
     }
 }
 
-.course-detail__point__item,
-.course-detail__point__item--third,
-.course-detail__point__item--second {
+.course-detail__point,
+.course-detail__point--third,
+.course-detail__point--second {
     border: #fff solid 0.2564102564vw;
     width: 34.1025641026vw;
     height: 8.9743589744vw;
@@ -547,9 +547,9 @@ img {
 
 @media screen and (min-width: 768px) {
 
-    .course-detail__point__item,
-    .course-detail__point__item--third,
-    .course-detail__point__item--second {
+    .course-detail__point,
+    .course-detail__point--third,
+    .course-detail__point--second {
         border-width: min(0.0943396226vw, 0.0625rem);
         width: min(39.6226415094vw, 26.25rem);
         height: min(6.5094339623vw, 4.3125rem);
@@ -559,14 +559,14 @@ img {
 }
 
 @media screen and (min-width: 768px) {
-    .course-detail__point__item--second {
+    .course-detail__point--second {
         letter-spacing: -0.005em;
         padding: min(0.8490566038vw, 0.5625rem) 0 0 min(0.1886792453vw, 0.125rem);
     }
 }
 
 @media screen and (min-width: 768px) {
-    .course-detail__point__item--third {
+    .course-detail__point--third {
         letter-spacing: -0.05em;
         padding: min(0.7547169811vw, 0.5rem) 0 0 min(0.1886792453vw, 0.125rem);
     }
@@ -932,7 +932,7 @@ img {
     }
 }
 
-.cv__detail__line {
+.cv__line {
     font-family: "Noto Sans JP", serif;
     font-weight: 400;
     font-style: normal;
@@ -942,12 +942,12 @@ img {
 }
 
 @media screen and (min-width: 768px) {
-    .cv__detail__line {
+    .cv__line {
         font-size: min(2.1566037736vw, 1.42875rem);
     }
 }
 
-.cv__detail__line--small {
+.cv__line--small {
     font-family: "Noto Sans JP", serif;
     font-weight: 400;
     font-style: normal;
@@ -957,7 +957,7 @@ img {
 }
 
 @media screen and (min-width: 768px) {
-    .cv__detail__line--small {
+    .cv__line--small {
         font-size: min(1.6943396226vw, 1.1225rem);
     }
 }
@@ -996,40 +996,56 @@ img {
     }
 }
 
-.point__title__first-line {
+.title__line,
+.title__line--second,
+.title__line--first {
     display: flex;
     justify-content: center;
     align-items: center;
+}
+
+.title__line--first {
     -moz-column-gap: 0.7692307692vw;
     column-gap: 0.7692307692vw;
     padding-left: 0.5128205128vw;
 }
 
 @media screen and (min-width: 768px) {
-    .point__title__first-line {
+    .title__line--first {
         -moz-column-gap: min(0.3773584906vw, 0.25rem);
         column-gap: min(0.3773584906vw, 0.25rem);
         padding-left: min(0.3773584906vw, 0.25rem);
     }
 }
 
-.point__title__logo {
+@media screen and (min-width: 768px) {
+    .title__line--second {
+        margin-left: max(-0.1886792453vw, -0.125rem);
+    }
+}
+
+.title__logo {
     color: #4d2b1b;
     margin-bottom: -1.0256410256vw;
 }
 
 @media screen and (min-width: 768px) {
-    .point__title__logo {
+    .title__logo {
         width: min(24.8113207547vw, 16.4375rem);
         height: min(1.8867924528vw, 1.25rem);
         margin-bottom: max(-0.3773584906vw, -0.25rem);
     }
 }
 
-.point__text__first {
+.title__text,
+.title__text--second,
+.title__text--first {
     font-family: "Noto Sans JP", serif;
     font-weight: 500;
     font-style: normal;
+}
+
+.title__text--first {
     font-size: 4.6153846154vw;
     letter-spacing: 0.04em;
     color: #4d2b1b;
@@ -1037,53 +1053,13 @@ img {
 }
 
 @media screen and (min-width: 768px) {
-    .point__text__first {
+    .title__text--first {
         font-size: min(1.7047169811vw, 1.129375rem);
         padding-top: min(0.4716981132vw, 0.3125rem);
     }
 }
 
-.point__title__second-line {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-@media screen and (min-width: 768px) {
-    .point__title__second-line {
-        margin-left: max(-0.1886792453vw, -0.125rem);
-    }
-}
-
-.point__sparkle,
-.point__sparkle--right {
-    width: 9.5666666667vw;
-    height: 11.7948717949vw;
-}
-
-@media screen and (min-width: 768px) {
-
-    .point__sparkle,
-    .point__sparkle--right {
-        width: min(4.8113207547vw, 3.1875rem);
-        height: min(6.4150943396vw, 4.25rem);
-    }
-}
-
-.point__sparkle--right {
-    margin-left: 0vw;
-}
-
-@media screen and (min-width: 768px) {
-    .point__sparkle--right {
-        margin-left: min(0.0943396226vw, 0.0625rem);
-    }
-}
-
-.point__text__second {
-    font-family: "Noto Sans JP", serif;
-    font-weight: 700;
-    font-style: normal;
+.title__text--second {
     font-size: 8.2051282051vw;
     line-height: 0.875;
     letter-spacing: 0.04em;
@@ -1091,10 +1067,35 @@ img {
 }
 
 @media screen and (min-width: 768px) {
-    .point__text__second {
+    .title__text--second {
         font-size: min(3.9622641509vw, 2.625rem);
         letter-spacing: 0.005em;
         padding-left: min(0.8490566038vw, 0.5625rem);
+    }
+}
+
+.title__sparkle,
+.title__sparkle--right {
+    width: 9.5666666667vw;
+    height: 11.7948717949vw;
+}
+
+@media screen and (min-width: 768px) {
+
+    .title__sparkle,
+    .title__sparkle--right {
+        width: min(4.8113207547vw, 3.1875rem);
+        height: min(6.4150943396vw, 4.25rem);
+    }
+}
+
+.title__sparkle--right {
+    margin-left: 0vw;
+}
+
+@media screen and (min-width: 768px) {
+    .title__sparkle--right {
+        margin-left: min(0.0943396226vw, 0.0625rem);
     }
 }
 
@@ -1303,7 +1304,7 @@ img {
     }
 }
 
-.point__comparison__item {
+.comparison__item {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -1312,13 +1313,13 @@ img {
 }
 
 @media screen and (min-width: 768px) {
-    .point__comparison__item {
+    .comparison__item {
         row-gap: min(0.7547169811vw, 0.5rem);
     }
 }
 
-.point__comparison__shop,
-.point__comparison__shop--other {
+.comparison__shop,
+.comparison__shop--other {
     width: 36.6666666667vw;
     height: 21.7948717949vw;
     padding: 5.641025641vw 7.6923076923vw 4.1025641026vw 8.2051282051vw;
@@ -1327,8 +1328,8 @@ img {
 
 @media screen and (min-width: 768px) {
 
-    .point__comparison__shop,
-    .point__comparison__shop--other {
+    .comparison__shop,
+    .comparison__shop--other {
         width: min(21.8867924528vw, 14.5rem);
         height: min(12.9245283019vw, 8.5625rem);
         padding: min(3.2075471698vw, 2.125rem) min(4.9056603774vw, 3.25rem) min(2.7358490566vw, 1.8125rem) min(5.6603773585vw, 3.75rem);
@@ -1336,7 +1337,7 @@ img {
     }
 }
 
-.point__comparison__shop--other {
+.comparison__shop--other {
     border-color: #666;
     background-color: #fdf0f5;
     color: #666;
@@ -1349,26 +1350,26 @@ img {
 }
 
 @media screen and (min-width: 768px) {
-    .point__comparison__shop--other {
+    .comparison__shop--other {
         font-size: min(2.7386792453vw, 1.814375rem);
         letter-spacing: 0.01em;
         padding: min(3.7735849057vw, 2.5rem) min(4.2452830189vw, 2.8125rem) min(4.8113207547vw, 3.1875rem) min(4.5283018868vw, 3rem);
     }
 }
 
-.point__logo {
+.comparison__logo {
     width: 18.2051282051vw;
     height: 10vw;
 }
 
 @media screen and (min-width: 768px) {
-    .point__logo {
+    .comparison__logo {
         width: min(10.9433962264vw, 7.25rem);
         height: min(6.0377358491vw, 4rem);
     }
 }
 
-.point__comparison__plan {
+.comparison__plan {
     font-family: "Noto Sans JP", serif;
     font-weight: 400;
     font-style: normal;
@@ -1377,14 +1378,14 @@ img {
 }
 
 @media screen and (min-width: 768px) {
-    .point__comparison__plan {
+    .comparison__plan {
         font-size: min(1.9811320755vw, 1.3125rem);
     }
 }
 
-.point__plan,
-.point__plan--second,
-.point__plan--first {
+.plan,
+.plan--second,
+.plan--first {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -1395,41 +1396,41 @@ img {
 
 @media screen and (min-width: 768px) {
 
-    .point__plan,
-    .point__plan--second,
-    .point__plan--first {
+    .plan,
+    .plan--second,
+    .plan--first {
         width: min(66.0377358491vw, 43.75rem);
         justify-content: flex-start;
         row-gap: min(2.4528301887vw, 1.625rem);
     }
 }
 
-.point__plan--first {
+.plan--first {
     row-gap: 5.3846153846vw;
 }
 
 @media screen and (min-width: 768px) {
-    .point__plan--first {
+    .plan--first {
         height: min(64.8113207547vw, 42.9375rem);
         row-gap: min(1.4150943396vw, 0.9375rem);
         margin-top: min(0.5660377358vw, 0.375rem);
     }
 }
 
-.point__plan--second {
+.plan--second {
     margin-top: 7.9487179487vw;
     row-gap: 5.1282051282vw;
 }
 
 @media screen and (min-width: 768px) {
-    .point__plan--second {
+    .plan--second {
         margin-top: min(0.9433962264vw, 0.625rem);
         padding-bottom: min(1.0377358491vw, 0.6875rem);
         row-gap: min(2.0754716981vw, 1.375rem);
     }
 }
 
-.point__plan__name {
+.plan__name {
     font-family: "Noto Sans JP", serif;
     font-weight: 600;
     font-style: normal;
@@ -1438,26 +1439,26 @@ img {
 }
 
 @media screen and (min-width: 768px) {
-    .point__plan__name {
+    .plan__name {
         font-size: min(2.2641509434vw, 1.5rem);
     }
 }
 
-.point__plan__img {
+.plan__img {
     width: 80.2564102564vw;
     height: 90vw;
     padding-left: 0.2564102564vw;
 }
 
 @media screen and (min-width: 768px) {
-    .point__plan__img {
+    .plan__img {
         width: min(55.2830188679vw, 36.625rem);
         height: min(56.6981132075vw, 37.5625rem);
         padding-left: min(0.2830188679vw, 0.1875rem);
     }
 }
 
-.point__plan__part {
+.plan__part {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -1471,7 +1472,7 @@ img {
 }
 
 @media screen and (min-width: 768px) {
-    .point__plan__part {
+    .plan__part {
         width: min(66.0377358491vw, 43.75rem);
         row-gap: min(1.6981132075vw, 1.125rem);
         -moz-column-gap: min(1.1320754717vw, 0.75rem);
@@ -1481,7 +1482,7 @@ img {
 }
 
 @media screen and (min-width: 1060px) {
-    .point__plan__part {
+    .plan__part {
         width: min(73.5849056604vw, 48.75rem);
         row-gap: min(1.6981132075vw, 1.125rem);
         -moz-column-gap: min(1.1320754717vw, 0.75rem);
@@ -1552,7 +1553,7 @@ img {
     }
 }
 
-.other__title {
+.other-title {
     width: 68.2051282051vw;
     display: flex;
     justify-content: center;
@@ -1561,13 +1562,13 @@ img {
 }
 
 @media screen and (min-width: 768px) {
-    .other__title {
+    .other-title {
         width: min(33.7735849057vw, 22.375rem);
         row-gap: min(0.1886792453vw, 0.125rem);
     }
 }
 
-.other__title__first-line {
+.other-title__first-line {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -1577,14 +1578,14 @@ img {
 }
 
 @media screen and (min-width: 768px) {
-    .other__title__first-line {
+    .other-title__first-line {
         -moz-column-gap: min(0.4716981132vw, 0.3125rem);
         column-gap: min(0.4716981132vw, 0.3125rem);
         padding-left: min(0.4716981132vw, 0.3125rem);
     }
 }
 
-.other__text__first-line {
+.other-text__first-line {
     font-family: "Noto Sans JP", serif;
     font-weight: 500;
     font-style: normal;
@@ -1593,12 +1594,12 @@ img {
 }
 
 @media screen and (min-width: 768px) {
-    .other__text__first-line {
+    .other-text__first-line {
         font-size: min(2.2641509434vw, 1.5rem);
     }
 }
 
-.other__title__second-line {
+.other-title__second-line {
     display: flex;
     justify-content: space-around;
     align-items: center;
@@ -1609,7 +1610,7 @@ img {
 }
 
 @media screen and (min-width: 768px) {
-    .other__title__second-line {
+    .other-title__second-line {
         justify-content: space-between;
         -moz-column-gap: min(0.5660377358vw, 0.375rem);
         column-gap: min(0.5660377358vw, 0.375rem);
@@ -1640,7 +1641,7 @@ img {
     margin-left: 0;
 }
 
-.other__text__second {
+.other-text__second {
     font-family: "Noto Sans JP", serif;
     font-weight: 700;
     font-style: normal;
@@ -1649,7 +1650,7 @@ img {
 }
 
 @media screen and (min-width: 768px) {
-    .other__text__second {
+    .other-text__second {
         font-size: min(3.9386792453vw, 2.609375rem);
         letter-spacing: 0.01em;
     }
@@ -1850,7 +1851,7 @@ img {
     margin-left: max(-0.5660377358vw, -0.375rem);
 }
 
-.voice__title__text {
+.voice__title-text {
     font-family: "Noto Sans JP", serif;
     font-weight: 700;
     font-style: normal;
@@ -1859,7 +1860,7 @@ img {
 }
 
 @media screen and (min-width: 768px) {
-    .voice__title__text {
+    .voice__title-text {
         font-size: min(3.9349056604vw, 2.606875rem);
         letter-spacing: 0.01em;
     }

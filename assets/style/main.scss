@@ -524,7 +524,7 @@ padding-bottom: vw(3);
     }
 }
 
-.course-detail__point {
+.course-detail__points {
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -539,7 +539,7 @@ padding-bottom: vw(3);
     }
 }
 
-.course-detail__point__item {
+.course-detail__point {
     border: #fff solid vw(1);
     width: vw(133);
     height: vw(35);
@@ -557,7 +557,7 @@ padding-bottom: vw(3);
     }
 
     &--second {
-        @extend .course-detail__point__item;
+        @extend .course-detail__point;
 
         @include mq(md) {
             letter-spacing: -0.005em;
@@ -566,7 +566,7 @@ padding-bottom: vw(3);
     }
 
     &--third {
-        @extend .course-detail__point__item;
+        @extend .course-detail__point;
 
         @include mq(md) {
             letter-spacing: -0.05em;
@@ -879,7 +879,7 @@ padding-bottom: vw(3);
     }
 }
 
-.cv__detail__line {
+.cv__line {
     @include baseFont;
     font-size: vw(14);
     line-height: 1.71;
@@ -931,20 +931,32 @@ padding-bottom: vw(3);
     }
 }
 
-.point__title__first-line {
+.title__line {
     display: flex;
     justify-content: center;
     align-items: center;
-    column-gap: vw(3);
-    padding-left: vw(2);
 
-    @include mq(md) {
-        column-gap: mvw(4);
-        padding-left: mvw(4);
+    &--first {
+        @extend .title__line;
+        column-gap: vw(3);
+        padding-left: vw(2);
+
+        @include mq(md) {
+            column-gap: mvw(4);
+            padding-left: mvw(4);
+        }
+    }
+
+    &--second {
+        @extend .title__line;
+
+        @include mq(md) {
+            margin-left: mvw(-2);
+        }
     }
 }
 
-.point__title__logo {
+.title__logo {
     color: #4d2b1b;
     margin-bottom: vw(-4);
 
@@ -955,30 +967,38 @@ padding-bottom: vw(3);
     }
 }
 
-.point__text__first {
+.title__text {
     @include baseFont($medium);
-    font-size: vw(18);
-    letter-spacing: 0.04em;
-    color: #4d2b1b;
-    padding-top: vw(1);
 
-    @include mq(md) {
-        font-size: mvw(18.07);
-        padding-top: mvw(5);
+    &--first {
+        @extend .title__text;
+        font-size: vw(18);
+        letter-spacing: 0.04em;
+        color: #4d2b1b;
+        padding-top: vw(1);
+
+        @include mq(md) {
+            font-size: mvw(18.07);
+            padding-top: mvw(5);
+        }
+    }
+
+    &--second {
+        @extend .title__text;
+        font-size: vw(32);
+        line-height: 0.875;
+        letter-spacing: 0.04em;
+        color: #fa7da3;
+
+        @include mq(md) {
+            font-size: mvw(42);
+            letter-spacing: 0.005em;
+            padding-left: mvw(9);
+        }
     }
 }
 
-.point__title__second-line {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-
-    @include mq(md) {
-        margin-left: mvw(-2);
-    }
-}
-
-.point__sparkle {
+.title__sparkle {
     width: vw(37.31);
     height: vw(46);
 
@@ -988,26 +1008,12 @@ padding-bottom: vw(3);
     }
 
     &--right {
-        @extend .point__sparkle;
+        @extend .title__sparkle;
         margin-left: vw(0);
 
         @include mq(md) {
             margin-left: mvw(1);
         }
-    }
-}
-
-.point__text__second {
-    @include baseFont($bold);
-    font-size: vw(32);
-    line-height: 0.875;
-    letter-spacing: 0.04em;
-    color: #fa7da3;
-
-    @include mq(md) {
-        font-size: mvw(42);
-        letter-spacing: 0.005em;
-        padding-left: mvw(9);
     }
 }
 
@@ -1175,7 +1181,7 @@ padding-bottom: vw(3);
     }
 }
 
-.point__comparison__item {
+.comparison__item {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -1187,7 +1193,7 @@ padding-bottom: vw(3);
     }
 }
 
-.point__comparison__shop {
+.comparison__shop {
     width: vw(143);
     height: vw(85);
     padding: vw(22) vw(30) vw(16) vw(32);
@@ -1201,7 +1207,7 @@ padding-bottom: vw(3);
     }
 
     &--other {
-        @extend .point__comparison__shop;
+        @extend .comparison__shop;
         border-color: #666;
         background-color: #fdf0f5;
         color: #666;
@@ -1218,7 +1224,7 @@ padding-bottom: vw(3);
     }
 }
 
-.point__logo {
+.comparison__logo {
     width: vw(71);
     height: vw(39);
 
@@ -1228,7 +1234,7 @@ padding-bottom: vw(3);
     }
 }
 
-.point__comparison__plan {
+.comparison__plan {
     @include baseFont;
     font-size: vw(14);
     color: #333;
@@ -1238,7 +1244,7 @@ padding-bottom: vw(3);
     }
 }
 
-.point__plan {
+.plan {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -1253,7 +1259,7 @@ padding-bottom: vw(3);
     }
 
     &--first {
-        @extend .point__plan;
+        @extend .plan;
         row-gap: vw(21);
 
         @include mq(md) {
@@ -1264,7 +1270,7 @@ padding-bottom: vw(3);
     }
 
     &--second {
-        @extend .point__plan;
+        @extend .plan;
         margin-top: vw(31);
         row-gap: vw(20);
 
@@ -1276,7 +1282,7 @@ padding-bottom: vw(3);
     }
 }
 
-.point__plan__name {
+.plan__name {
     @include baseFont($semibold);
     font-size: vw(23);
     color: #4d2c1c;
@@ -1286,7 +1292,7 @@ padding-bottom: vw(3);
     }
 }
 
-.point__plan__img {
+.plan__img {
     width: vw(313);
     height: vw(351);
     padding-left: vw(1);
@@ -1298,7 +1304,7 @@ padding-bottom: vw(3);
     }
 }
 
-.point__plan__part {
+.plan__part {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -1376,7 +1382,7 @@ padding-bottom: vw(3);
     }
 }
 
-.other__title {
+.other-title {
     width: vw(266);
     display: flex;
     justify-content: center;
@@ -1389,7 +1395,7 @@ padding-bottom: vw(3);
     }
 }
 
-.other__title__first-line {
+.other-title__first-line {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -1402,7 +1408,7 @@ padding-bottom: vw(3);
     }
 }
 
-.other__text__first-line {
+.other-text__first-line {
     @include baseFont($medium);
     font-size: vw(18);
     color: #4d2b1b;
@@ -1412,7 +1418,7 @@ padding-bottom: vw(3);
     }
 }
 
-.other__title__second-line {
+.other-title__second-line {
     display: flex;
     justify-content: space-around;
     align-items: center;
@@ -1446,7 +1452,7 @@ padding-bottom: vw(3);
     }
 }
 
-.other__text__second {
+.other-text__second {
     @include baseFont($bold);
     font-size: vw(32);
     color: #fa7da3;
@@ -1617,7 +1623,7 @@ padding-bottom: vw(3);
     }
 }
 
-.voice__title__text {
+.voice__title-text {
     @include baseFont($bold);
     font-size: vw(32);
     color: #fa7da3;
